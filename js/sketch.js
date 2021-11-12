@@ -1,36 +1,47 @@
-var planet1Orbit=0;
-var planet2Orbit=0;
+var canvasSize =400 ;
 
 function setup() {
-    var canvas = createCanvas(800, 800);
+    var canvas = createCanvas(canvasSize, canvasSize);
     canvas.parent("p5container");
 }
 
 function draw() {
-    background(0);
-    //sun
-    translate(width/2,height/2);
-    fill(240,240,10);
-    ellipse(0,0,300);
 
-    //planet1
-    push();
-    rotate(planet1Orbit);
-    translate(280,0);
-    fill(100,200,200);
-    ellipse(0,0,100);
+    var eyeX = map(mouseX, 0, 125, 100, 200);
+    var eyey = map(mouseY, 0, 125, 100, 200);
+    console.log(mouseX, mouseY);
 
-    //planet2
+    
+    
+
+
+    background(220);
+
+    strokeWeight(5);
+
+    fill(250, 250, 0);
+    ellipse(width/2 , height/2 , 300);
+
+    //eyes
+
+    fill(255);
+    ellipse(mouseX, mouseY,45, 60);
+    ellipse(mouseX + 100, mouseY,45, 60);
+
     push();
-    rotate(planet2Orbit);
-    translate(90,0);
-    fill(100,0,115);
-    ellipse(0,0,30);
+
+    noStroke();   
+
+    fill(255, 215, 0);
+    ellipse (110, 220, 50);
+    ellipse (290, 220, 50);
+
 
     pop();
-    pop();
-    planet1Orbit = planet1Orbit+0.01
-    planet2Orbit = planet2Orbit+0.05
+    noFill();
+    arc (200,220,180,180, radians(30), radians(150));
+
+
 
 
 }
