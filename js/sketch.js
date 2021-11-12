@@ -7,8 +7,8 @@ function setup() {
 
 function draw() {
 
-    var eyeX = map(mouseX, 0, 125, 100, 200);
-    var eyey = map(mouseY, 0, 125, 100, 200);
+    var eyeX = map(mouseX, 0, 400, 135, 165);
+    var eyeY = map(mouseY, 0, 400, 135, 165);
     console.log(mouseX, mouseY);
 
     
@@ -25,8 +25,8 @@ function draw() {
     //eyes
 
     fill(255);
-    ellipse(mouseX, mouseY,45, 60);
-    ellipse(mouseX + 100, mouseY,45, 60);
+    ellipse(eyeX, eyeY,45, 60);
+    ellipse(eyeX + 100, eyeY ,45, 60);
 
     push();
 
